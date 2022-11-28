@@ -1,0 +1,7 @@
+{
+  "if": {
+    "prefix": "if",
+    "body": ["if $1 then", "\t$2", "end if"],
+    "description": "if block"
+  }
+}

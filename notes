@@ -1,0 +1,18 @@
+TOP LEVEL KEYWORDS
+if, then, end, loop
+
+LEVEL 2 KEYWORDS
+while, until
+
+FUNCTIONS
+mul div add sub mod
+
+LOWERCASE TLD
+output, return, 
+
+- comments
+- strings
+- []'s
+- capitalized variables that is not:
+    - "NOT"
+- "true" and "false"
