@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#function"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -22,6 +25,14 @@
 		}
 	],
 	"repository": {
+		"function": {
+			"patterns": [
+				{
+					"name": "keyword.js",
+					"match": "\\b(func|function)\\b"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
@@ -38,7 +49,7 @@
 				},
 				{
 					"name": "entity.name.type.instance.js",
-					"match": "\\b(output|input|AND|OR|NOT|div|mod|function)\\b"
+					"match": "\\b(output|input|AND|OR|NOT|div|mod)\\b"
 				}
 			]
 		},
