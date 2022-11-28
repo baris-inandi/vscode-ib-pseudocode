@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.js",
-					"match": "\\b(func|function)\\b"
+					"match": "\\b(function)\\b"
 				}
 			]
 		},
@@ -41,7 +41,7 @@
 				},
 				{
 					"name": "keyword.control.loop.js",
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(loop|to|break|continue|while|until|from|end\\ loop)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(loop|to|break|continue|while|until|from|end)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
 				},
 				{
 					"name": "keyword.control.flow.js",
