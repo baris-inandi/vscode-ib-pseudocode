@@ -2,9 +2,13 @@
   "name": "ib-pseudocode",
   "displayName": "IB Pseudocode",
   "description": "Provides syntax highlighting for IB's pseudocode definition",
+  "icon": "icon.png",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.73.0"
+  },
+  "scripts": {
+    "build": "vsce package"
   },
   "categories": [
     "Programming Languages"
