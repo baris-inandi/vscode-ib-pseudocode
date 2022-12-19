@@ -3,6 +3,9 @@
 	"name": "IB Pseudocode",
 	"patterns": [
 		{
+			"include": "#end"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -18,6 +21,9 @@
 			"include": "#variables"
 		},
 		{
+			"include": "#methods"
+		},
+		{
 			"include": "#numeric-literal"
 		},
 		{
@@ -29,7 +35,19 @@
 			"patterns": [
 				{
 					"name": "keyword.js",
-					"match": "\\b(function)\\b"
+					"match": "\\b(function|sub|class)\\b"
+				},
+				{
+					"name": "support.js",
+					"match": "=|<|>"
+				}
+			]
+		},
+		"end": {
+			"patterns": [
+				{
+					"name": "keyword.other.unit.js",
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(end)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
 				}
 			]
 		},
@@ -37,11 +55,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.conditional.js",
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(else|if|then|end\\ if)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(else|if|then\\ if)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
 				},
 				{
 					"name": "keyword.control.loop.js",
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(loop|to|break|continue|while|until|from|end)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(loop|to|break|continue|while|until|from|new)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
 				},
 				{
 					"name": "keyword.control.flow.js",
@@ -114,63 +132,8 @@
 		"variables": {
 			"patterns": [
 				{
-					"begin": "(^[ \\t]+)?([A-Z]+)(\\.[a-z_A-Z]+\\(.*\\))?",
-					"beginCaptures": {
-						"1": {
-							"name": "punctuation.whitespace.comment.leading.js"
-						},
-						"2": {
-							"name": "variable.name.js"
-						},
-						"3": {
-							"name": "entity.name.function.js",
-							"patterns": [
-								{
-									"begin": "\\.[a-z_A-Z]+(\\(.*\\))?",
-									"beginCaptures": {
-										"1": {
-											"patterns": [
-												{
-													"include": "#strings"
-												},
-												{
-													"include": "#numeric-literal"
-												},
-												{
-													"include": "#boolean-literal"
-												},
-												{
-													"include": "#variables"
-												}
-											]
-										}
-									},
-									"end": "(?=$)"
-								}
-							]
-						}
-					},
-					"end": "(?=$)",
-					"patterns": [
-						{
-							"include": "#keywords"
-						},
-						{
-							"include": "#comment"
-						},
-						{
-							"include": "#strings"
-						},
-						{
-							"include": "#numeric-literal"
-						},
-						{
-							"include": "#boolean-literal"
-						},
-						{
-							"include": "#variables"
-						}
-					]
+					"name": "variable.name.js",
+					"match": "\\b[A-Z][A-Z0-9_]+\\b|\\b[A-Z]+\\b"
 				}
 			]
 		},

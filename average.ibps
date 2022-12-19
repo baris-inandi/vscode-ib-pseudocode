@@ -1,4 +1,4 @@
-function average
+sub average
     COUNT = 0
     TOTAL = 0
     loop N from 0 to 999
@@ -13,4 +13,4 @@ function average
     else
         output "There are no non-zero values"
     end if
-end function
+end sub
